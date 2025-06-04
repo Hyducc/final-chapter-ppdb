@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SMK Bina Informatika</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #dbeeff, #ffffff);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Snow Animation */
+        #background-anim {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            bottom: -10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.7;
+            pointer-events: none;
+            animation: snowUp linear infinite;
+        }
+
+        @keyframes snowUp {
+            0% { transform: translateY(0); opacity: 0; }
+            30% { opacity: 1; }
+            100% { transform: translateY(-120vh); opacity: 0; }
+        }
+
+        .navbar { z-index: 3; }
+
+        .jurusan-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            height: 100%;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .jurusan-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .jurusan-icon {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        .jurusan-title {
+            background-color: #0d6efd;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .btn-back {
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #0b5ed7;
+            color: white;
+        }
+
+        .kontak a {
+            text-decoration: none;
+        }
+
+        .btn-wa {
+            background-color: #25D366;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-wa:hover {
+            background-color: #1EBE5D;
+            color: white;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h2, h3, h4 {
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Poster Section */
+        .poster-section {
+            margin-top: 40px;
+        }
+        .poster-section img {
+            max-height: 500px;
+            object-fit: cover;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        /* Animasi untuk poster */
+        .poster-anim {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Snow Animation -->
+    <div id="background-anim"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light shadow-sm sticky-top">
+        <div class="container d-flex align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="logo.png" alt="Logo" width="40" height="40" class="me-2" />
+                SMK Bina Informatika
+            </a>
+            <button class="btn btn-back ms-auto" onclick="window.location.href='index.html';">
+                &larr; Kembali
+            </button>
+        </div>
+    </nav>
+
+    <!-- Konten -->
+    <div class="container my-5 position-relative" style="z-index: 2;">
+
+        <!-- Poster -->
+        <div class="poster-section">
+            <img src="poster.png" alt="Poster SMK Bina Informatika" class="poster-anim" />
+        </div>
+
+        <div class="mb-5 text-center">
+            <h2>Tentang SMK Bina Informatika</h2>
+            <p>
+                SMK Bina Informatika adalah sekolah kejuruan berbasis teknologi yang berlokasi di Kota Bogor.
+                Fokus kami adalah membentuk lulusan yang kompeten dan siap kerja sesuai jurusan pilihan.
+            </p>
+        </div>
+
+        <h3 class="text-center mb-4">Program Keahlian</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <!-- Jurusan -->
+            <div class="col">
+                <a href="rpl.html" class="text-decoration-none text-dark">
+                    <div class="card jurusan-card text-center p-4">
+                        <img src="rpl.png" alt="RPL" class="jurusan-icon" />
+                        <h5 class="jurusan-title">Rekayasa Perangkat Lunak (RPL)</h5>
+                        <p>Belajar pemrograman, aplikasi web, mobile, dan database.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="mm.html" class="text-decoration-none text-dark">
+                    <div class="card jurusan-card text-center p-4">
+                        <img src="mm.png" alt="Multimedia" class="jurusan-icon" />
+                        <h5 class="jurusan-title">Multimedia (MM)</h5>
+                        <p>Fokus pada desain grafis, video, animasi, dan fotografi.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="otkp.html" class="text-decoration-none text-dark">
+                    <div class="card jurusan-card text-center p-4">
+                        <img src="otkp.png" alt="OTKP" class="jurusan-icon" />
+                        <h5 class="jurusan-title">Otomatisasi & Tata Kelola Perkantoran (OTKP)</h5>
+                        <p>Administrasi perkantoran modern & teknologi perkantoran.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="tkj.html" class="text-decoration-none text-dark">
+                    <div class="card jurusan-card text-center p-4">
+                        <img src="tkj.png" alt="TKJ" class="jurusan-icon" />
+                        <h5 class="jurusan-title">Teknik Komputer dan Jaringan (TKJ)</h5>
+                        <p>Jaringan komputer, server, instalasi, dan keamanan jaringan.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="pkm.html" class="text-decoration-none text-dark">
+                    <div class="card jurusan-card text-center p-4">
+                        <img src="pkm.png" alt="PKM" class="jurusan-icon" />
+                        <h5 class="jurusan-title">Perbankan dan Keuangan Mikro (PKM)</h5>
+                        <p>Dasar perbankan, akuntansi, dan keuangan mikro.</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Kontak -->
+        <hr class="my-5" />
+        <div class="text-center kontak">
+            <h4>Kontak Kami</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3879465766718!2d106.77669307356017!3d-6.598614564501537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5a582fd19a1%3A0xc9625c2e1b855a16!2sJl.%20Re.%20Abdullah%2C%20Kec.%20Bogor%20Bar.%2C%20Kota%20Bogor%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1746514543627!5m2!1sid!2sid" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p><strong>Alamat:</strong> Jl. Re. Abdullah No.14, Kota Bogor, Jawa Barat 16118</p>
+            <p><strong>Email:</strong> <a href="mailto:smkbifor@gmail.com">smkbifor@gmail.com</a></p>
+            <a class="btn btn-wa mt-2" href="https://wa.me/6281234567890" target="_blank">Hubungi Kami via WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-muted py-3 mt-5" style="z-index: 2; position: relative;">
+        <small>&copy; <span id="year"></span> SMK Bina Informatika. All rights reserved.</small>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const background = document.getElementById('background-anim');
+        const numberOfSnowflakes = 30;
+
+        for (let i = 0; i < numberOfSnowflakes; i++) {
+            const flake = document.createElement('div');
+            flake.classList.add('snowflake');
+            const size = Math.random() * 6 + 3;
+            flake.style.width = size + 'px';
+            flake.style.height = size + 'px';
+            flake.style.left = Math.random() * 100 + 'vw';
+            flake.style.animationDuration = (5 + Math.random() * 5) + 's';
+            flake.style.animationDelay = Math.random() * 10 + 's';
+            background.appendChild(flake);
+        }
+    </script>
+</body>
+</html>

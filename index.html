@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PPDB SMK Bina Informatika</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #0a2540, #061b2a);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #loading {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #061b2a;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #background-anim {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .snowflake {
+      position: absolute;
+      bottom: -10px;
+      background: #a8d0ff;
+      border-radius: 50%;
+      opacity: 0.5;
+      pointer-events: none;
+      animation: snowUp linear infinite;
+      filter: drop-shadow(0 0 2px #6ea8ff);
+    }
+
+    @keyframes snowUp {
+      0% { transform: translateY(0); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      color: #ffffff;
+      text-shadow: 0 0 12px #74a9ff;
+    }
+
+    .hero-content p {
+      font-size: 2rem;
+      max-width: 900px;
+      margin: 25px auto;
+      color: #e0f0ff;
+      text-shadow: 0 0 6px #4a8cff;
+    }
+
+    .hero-content .btn {
+      margin-top: 30px;
+      padding: 14px 34px;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .promo-box {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #113b70;
+      color: #a8d0ff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #4a8cff;
+      font-size: 1.1rem;
+      text-shadow: 0 0 4px #4a8cff;
+    }
+
+    nav.navbar {
+      z-index: 4;
+      background-color: #0d2a55 !important;
+      box-shadow: 0 2px 8px rgba(20, 50, 100, 0.7);
+    }
+
+    .navbar-brand, .navbar-brand span {
+      color: #a8d0ff !important;
+      font-weight: 600;
+      text-shadow: 0 0 3px #74a9ff;
+    }
+
+    .btn-primary {
+      background-color: #4a8cff;
+      border-color: #4a8cff;
+      box-shadow: 0 0 10px #74a9ff;
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+      background-color: #6ea8ff;
+      border-color: #6ea8ff;
+      box-shadow: 0 0 15px #9cc9ff;
+      color: #ffffff;
+    }
+
+    .btn-outline-primary {
+      border-color: #4a8cff;
+      color: #a8d0ff;
+    }
+
+    .btn-outline-primary:hover, .btn-outline-primary:focus {
+      background-color: #4a8cff;
+      color: #ffffff;
+      border-color: #4a8cff;
+      box-shadow: 0 0 10px #74a9ff;
+    }
+
+    footer {
+      margin-top: auto;
+      background-color: #0d2a55;
+      color: #8fb7ff;
+      text-shadow: 0 0 2px #4a8cff;
+    }
+
+    footer small {
+      color: #f1c40f;
+      text-shadow: 0 0 3px #d4af37;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Animation -->
+  <div id="loading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Background Snow Animation -->
+  <div id="background-anim"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logo.png" alt="Logo SMK Bina Informatika" width="40" height="40" class="me-2" />
+        <span>SMK Bina Informatika</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <div class="container hero-content">
+      <h1>Penerimaan Peserta Didik Baru (PPDB)</h1>
+      <p>
+        Ayo bergabung di SMK Bina Informatika! Daftarkan dirimu sekarang dan wujudkan cita-citamu di dunia teknologi.
+      </p>
+      <div class="promo-box">
+        🎉 Promo: DSP Gratis untuk 100 Pendaftar Pertama!
+      </div>
+      <div>
+        <a href="sekolah.html" class="btn btn-outline-primary btn-lg">Lihat Selengkapnya</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Footer -->
+  <footer class="text-center text-muted py-3 mt-auto shadow-sm">
+    <div class="container">
+      <small>&copy; 2025 SMK Bina Informatika | Dibuat oleh Kahfi Nuril</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap + JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Hilangkan loading saat selesai dimuat
+    window.addEventListener("load", function () {
+      const loading = document.getElementById("loading");
+      loading.style.transition = "opacity 0.5s ease";
+      loading.style.opacity = "0";
+      setTimeout(() => loading.style.display = "none", 500);
+    });
+
+    // Animasi salju
+    const background = document.getElementById('background-anim');
+    const numberOfSnowflakes = 40;
+
+    for (let i = 0; i < numberOfSnowflakes; i++) {
+      const flake = document.createElement('div');
+      flake.classList.add('snowflake');
+      const size = Math.random() * 6 + 3;
+      flake.style.width = size + 'px';
+      flake.style.height = size + 'px';
+      flake.style.left = Math.random() * 100 + 'vw';
+      flake.style.animationDuration = (5 + Math.random() * 5) + 's';
+      flake.style.animationDelay = Math.random() * 10 + 's';
+      background.appendChild(flake);
+    }
+  </script>
+</body>
+</html>
