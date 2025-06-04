@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Planet Defense Game</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #canvas {
+            display: block;
+        }
+
+        /* Tombol Kembali seperti di index.html */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            padding: 18px 50px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #00bfff, #1e90ff);
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 191, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #009acd, #187bcd);
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 191, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Tombol kembali dengan gaya modern -->
+    <button class="back-button" onclick="window.location.href='index.html'">⟵ Kembali</button>
+
+    <!-- Canvas game -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Script game utama -->
+    <script src="js/main.js"></script>
+</body>
+</html>
